@@ -1,0 +1,60 @@
+{
+  "name": "Jesus Universal Dev Environment",
+
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  "features": {
+    
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+
+  },
+
+  "forwardPorts": [
+    3000,
+    5173,
+    8000,
+    8069
+  ],
+
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  "customizations": {
+
+    "vscode": {
+
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay"
+      },
+
+      "extensions": [
+
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+
+        "ms-python.python",
+        "ms-python.debugpy",
+
+        "eamodio.gitlens",
+
+        "ms-azuretools.vscode-docker",
+
+        "bradlc.vscode-tailwindcss"
+
+      ]
+    }
+  }
+}

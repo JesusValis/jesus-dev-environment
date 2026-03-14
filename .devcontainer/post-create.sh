@@ -1,22 +1,28 @@
 #!/bin/bash
 
-echo "Actualizando sistema..."
-sudo apt update
-
-echo "Instalando utilidades..."
+echo "🔧 Updating system..."
+sudo apt update -y
 sudo apt install -y jq tree unzip ripgrep
+sudo apt clean
 
-echo "Instalando herramientas Node..."
-npm install -g yarn pnpm typescript eslint prettier
+echo "📦 Installing global Node tools..."
+npm install -g yarn pnpm eslint prettier typescript
 
-echo "Instalando Wix CLI..."
+echo "🌐 Installing Wix CLI..."
 npm install -g @wix/cli
 
-echo "Instalando herramientas Python..."
-pip install --upgrade pip
-pip install black flake8 requests pandas openpyxl fastapi uvicorn
+echo "🐍 Installing Python tools..."
+pip install --upgrade pip --no-cache-dir
+pip install --no-cache-dir \
+black \
+flake8 \
+requests \
+pandas \
+openpyxl \
+fastapi \
+uvicorn
 
-echo "Configurando Git..."
+echo "🔧 Configuring Git..."
 git config --global init.defaultBranch main
 
-echo "Entorno listo 🚀"
+echo "🚀 Dev environment ready!"
